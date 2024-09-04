@@ -24,7 +24,7 @@ pipeline {
 
         stage('Run Postman Collection') {
             steps {
-                sh 'newman run NewDemoAPIs.postman_collection (1).json -r cli,htmlextra  --reporter-htmlextra-export Jenkins_home/newman/reports/html-report/report2.html'
+                sh 'newman run NewDemoAPIs.postman_collection (1).json -r cli,htmlextra  --reporter-htmlextra-export $PARAG_HOME/newman/reports/html-report/report2.html'
             }
          }
         // stage('Generate Report') {
