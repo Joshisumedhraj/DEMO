@@ -24,14 +24,14 @@ pipeline {
 
         stage('Run Postman Collection') {
             steps {
-                sh 'newman run NewDemoAPIs.postman_collection_(1).json -r cli,htmlextra  --reporter-htmlextra-export $PARAG_HOME/newman/reports/html-report/report2.html'
+                sh 'newman run NewDemoAPIs.postman_collection_(1).json -r cli,htmlextra  --reporter-htmlextra-export $jenkins_home/newman/DEMO/html-report/report2.html'
             }
          }
         // stage('Generate Report') {
         //     steps {
         //         sh '''
         //             mkdir -p $PARAG_HOME/workspace/$JOB_BASE_NAME/htmlreports/Bloqweb_20HTML_20Report
-        //             echo "<html><body><h1>Report</h1></body></html>" > $PARAG_HOME/workspace/$JOB_BASE_NAME/htmlreports/Bloqweb_20HTML_20Report/index.html
+        //             echo "<html><body><h1>Report</h1></body></html>" > $jenkins_home/workspace/$JOB_BASE_NAME/DEMO/index.html
 
         //         '''
         //     }
@@ -44,7 +44,7 @@ pipeline {
            publishHTML(target: [
                   alwaysLinkToLastBuild: true,
                   keepAll: true,
-                  reportDir: '$PARAG_HOME/newman/reports/html-report/',
+                  reportDir: '$jenkins_home/newman/reports/html-report/',
                   reportFiles: 'report2.html',
                   keepAll: true]
                 )
