@@ -1,0 +1,28 @@
+# version: '3.8'
+
+services:
+  jenkins:
+    build:  
+      context: .  
+      dockerfile: Dockerfile 
+    container_name: jenkins
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./Parag_home:/var/jenkins_home 
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - ./newman-new_reports:/newman/reports 
+    environment:
+      JENKINS_OPTS: --prefix=/jenkins
+    networks:
+      - jenkins-net
+
+networks:
+  jenkins-net:
+    driver: bridge
+
+volumes:
+  jenkins_home:
+    driver: local
