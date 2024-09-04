@@ -44,7 +44,7 @@ pipeline {
            publishHTML(target: [
                   alwaysLinkToLastBuild: true,
                   keepAll: true,
-                  reportDir: 'PARAG_HOME/newman/reports/html-report/',
+                  reportDir: '$PARAG_HOME/newman/reports/html-report/',
                   reportFiles: 'report2.html',
                   keepAll: true]
                 )
