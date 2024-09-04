@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "a17781c2-1536-4002-a1a3-28e159d7fdfa",
+		"name": "DemoAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37432142"
+	},
+	"item": [
+		{
+			"name": "Sysadmin-HC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body is not empty\", function () {",
+							"    const responseData = pm.response.json();   ",
+							"    pm.expect(responseData).to.not.be.empty;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body message should be 'Health is Ok!'\", function() {",
+							"    pm.expect(\"Helath is Ok!\").to.eql(\"Helath is Ok!\");",
+							"})",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://api.qa.bloqcube.com/system-admin/check-health"
+			},
+			"response": []
+		},
+		{
+			"name": "trialmgmnt-HC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body is not empty\", function () {",
+							"    const responseData = pm.response.json();   ",
+							"    pm.expect(responseData).to.not.be.empty;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response body message should be 'Health is Ok!'\", function() {",
+							"    pm.expect(\"Helath is Ok!\").to.eql(\"Helath is Ok!\");",
+							"})",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://api.qa.bloqcube.com/trial-mgmt/check-health"
+			},
+			"response": []
+		}
+	]
+}
